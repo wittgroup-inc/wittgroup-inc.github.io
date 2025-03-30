@@ -5,85 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAssist - Data Deletion Request</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1A3CE2;
+            --text-color: #333;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
             padding: 20px;
-            max-width: 400px;
-            background-color: #f8f9fa;
+            background: #fff;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
-        h2 {
+
+        .header {
             text-align: center;
+            padding: 20px 0;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
+
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        form {
+            padding: 20px;
+        }
+
         label {
             font-weight: bold;
+            display: block;
+            margin-top: 10px;
         }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
+
+        input, textarea {
             width: 100%;
             padding: 10px;
-            background-color: #dc3545;
-            color: white;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
             border: none;
             border-radius: 5px;
+            font-size: 1.2em;
             cursor: pointer;
-            font-size: 16px;
+            transition: background 0.3s;
         }
-        button:hover {
-            background-color: #c82333;
+
+        .submit-button:hover {
+            background-color: #1230b0;
         }
-        .error {
-            color: red;
-            font-size: 14px;
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            font-size: 1em;
+            margin-top: 20px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <h2>Request to Delete Your Data</h2>
-    <p>If you wish to delete your account and associated data from SmartAssist, please fill out the form below.</p>
 
-    <form id="deleteForm">
-        <label for="email">Your Registered Email:</label>
-        <input type="email" id="email" name="email" required>
-        <p id="emailError" class="error"></p>
+    <div class="container">
+        <div class="header">
+            <h1>Request to Delete My Account</h1>
+        </div>
+        
+        <form action="mailto:wittgrp@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="uid">User ID (if available):</label>
-        <input type="text" id="uid" name="uid">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
 
-        <button type="submit">Request Deletion</button>
-    </form>
+            <label for="reason">Reason for Deletion *</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
 
-    <script>
-        document.getElementById("deleteForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+            <input type="hidden" name="subject" value="SmartAssist - Account Deletion Request">
 
-            var email = document.getElementById("email").value.trim();
-            var uid = document.getElementById("uid").value.trim();
-            var emailError = document.getElementById("emailError");
+            <button type="submit" class="submit-button">Submit Request</button>
+        </form>
+    </div>
 
-            // Email validation
-            if (!email) {
-                emailError.textContent = "Email is required.";
-                return;
-            } else {
-                emailError.textContent = "";
-            }
+    <div class="footer">
+        <p>&copy; 2024 SmartAssist. All rights reserved.</p>
+    </div>
 
-            var subject = encodeURIComponent("Request for Account & Data Deletion ");
-            var body = encodeURIComponent("I request to delete my SmartAssist account.\n\nEmail: " + email + "\nUser ID: " + uid + "\n\nPlease proceed with account deletion.");
-
-            var mailtoLink = "mailto:wittgrp@gmail.com?subject=" + subject + "&body=" + body;
-            window.location.href = mailtoLink;
-        });
-    </script>
 </body>
 </html>
