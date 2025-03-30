@@ -1,6 +1,89 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAssist - Data Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 400px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
 <body>
     <h2>Request to Delete Your Data</h2>
-    <p>Email us at <a href="mailto:wittgrp@gmail.com">wittgrp@gmail.com</a> to request data deletion.</p>
+    <p>If you wish to delete your account and associated data from SmartAssist, please fill out the form below.</p>
+
+    <form id="deleteForm">
+        <label for="email">Your Registered Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p id="emailError" class="error"></p>
+
+        <label for="uid">User ID (if available):</label>
+        <input type="text" id="uid" name="uid">
+
+        <button type="submit">Request Deletion</button>
+    </form>
+
+    <script>
+        document.getElementById("deleteForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById("email").value.trim();
+            var uid = document.getElementById("uid").value.trim();
+            var emailError = document.getElementById("emailError");
+
+            // Email validation
+            if (!email) {
+                emailError.textContent = "Email is required.";
+                return;
+            } else {
+                emailError.textContent = "";
+            }
+
+            var subject = encodeURIComponent("Request for Account & Data Deletion ");
+            var body = encodeURIComponent("I request to delete my SmartAssist account.\n\nEmail: " + email + "\nUser ID: " + uid + "\n\nPlease proceed with account deletion.");
+
+            var mailtoLink = "mailto:wittgrp@gmail.com?subject=" + subject + "&body=" + body;
+            window.location.href = mailtoLink;
+        });
+    </script>
 </body>
 </html>
