@@ -83,6 +83,13 @@
             background-color: #1230b0;
         }
 
+        .info {
+            margin-top: 15px;
+            font-size: 0.9em;
+            text-align: center;
+            color: var(--text-color);
+        }
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -118,10 +125,13 @@
             <label for="reason">Reason for Deletion *</label>
             <textarea id="reason" name="reason" rows="4" required></textarea>
 
-            <input type="hidden" name="subject" value="SmartAssist - Account Deletion Request">
+            <input type="hidden" name="subject" value="Account Deletion Request">
 
             <button type="submit" class="submit-button">Submit Request</button>
         </form>
+
+        <p class="info">If the submit button is not working, you can send your account deletion request directly via email to <strong>wittgrp@gmail.com</strong>, with subject line <strong>Account Deletion Request</strong> and the above details.</p>
+        <p class="info">Your account will be deleted within 30 days of your request.</p>
     </div>
 
     <div class="footer">
