@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header header--main">
-        <img src="app_logo.png" alt="SmartAssist Logo">
-        <h1>SmartAssist</h1>
-        <p>Your Powerful ChatBot Assistant</p>
-    </header>
+    <div data-include="header.html"></div>
 
     <section class="intro container">
         <p>SmartAssist is a powerful chatbot designed to help you get the answers you need quickly and easily. Whether you have a question or need help with a task, SmartAssist is here to help. Available on Android Phones, Tablets, and Android TV.</p>
@@ -65,17 +61,14 @@
         <iframe src="https://www.youtube.com/embed/4qI6o_9TQPE" title="SmartAssist Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
-        <!-- User Privacy Section -->
-        <section class="container">
-            <h2>We Respect Your Privacy</h2>
-            <p>SmartAssist ensures your data remains secure. Your conversations are not stored, and we do not share your personal data with third parties. You are in full control of your information.</p>
-            <p>Need to delete your data? <a href="deleteaccount.html">Request account deletion here</a>.</p>
-        </section>
+    <section class="privacy container">
+        <h2>We Respect Your Privacy</h2>
+        <p>SmartAssist ensures your data remains secure. Your conversations are not stored, and we do not share your personal data with third parties. You are in full control of your information.</p>
+        <p>Need to delete your data? <a href="deleteaccount.html">Request account deletion here</a>.</p>
+    </section>
 
-    <footer class="footer">
-        <p>Developed by <strong>WITTGroup</strong> with <span style="color:red;">❤</span> in India</p>
-        <p>Contact us: <a href="mailto:wittgrp@gmail.com">wittgrp@gmail.com</a></p>
-        <p>© 2024 SmartAssist. All rights reserved.</p>
-    </footer>
+    <div data-include="footer.html"></div>
+
+    <script src="include.js"></script>
 </body>
 </html>
