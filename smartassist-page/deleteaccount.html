@@ -5,24 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAssist - Data Deletion Request</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        document.getElementById('deletionForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const reason = document.getElementById('reason').value;
-
-            const subject = 'Account Deletion Request';
-            const body = `I, ${name}, with email ${email}, request account deletion.\n Reason: ${reason}.\n\nThanks,\n${name}`;
-
-            // Construct mailto URL
-            const mailtoLink = `mailto:wittgrp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-        });
-    </script>
 </head>
 <body>
     <div data-include="header.html"></div>
@@ -52,5 +34,23 @@
     <div data-include="footer.html"></div>
 
     <script src="include.js"></script>
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+
+            const subject = 'Account Deletion Request';
+            const body = `I, ${name}, with email ${email}, request account deletion.\n Reason: ${reason}.\n\nThanks,\n${name}`;
+
+            // Construct mailto URL
+            const mailtoLink = `mailto:wittgrp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+        });
+    </script>
 </body>
 </html>
