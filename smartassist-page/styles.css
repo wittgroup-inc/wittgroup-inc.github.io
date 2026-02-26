@@ -6,7 +6,7 @@
 }
 
 :root {
-    --primary-color: #1A3CE2;
+    --primary-color: #111111;
     --text-color: #333;
 }
 
@@ -238,4 +238,5 @@ textarea {
     .form-container {
         width: 90%;
     }
+
 }
