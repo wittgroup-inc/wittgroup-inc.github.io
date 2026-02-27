@@ -240,4 +240,16 @@ textarea {
     }
 }
 
+.container h1,
+.container h2,
+.container h3 {
+    margin: 20px 0 10px;
+}
 
+.container p {
+    margin: 10px 0;
+}
+
+.container ul {
+    margin: 10px 0 10px 20px;
+}
