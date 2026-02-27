@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivaly - Data Deletion Request</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div data-include="header.html"></div>
+
+    <div class="form-container">
+        <div class="header header--form">
+            <h1>Request to Delete My Account</h1>
+        </div>
+        
+        <form id="deletionForm">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="reason">Reason for Deletion *</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <button type="submit" class="submit-button">Submit Request</button>
+        </form>
+
+        <p class="info">If the submit button is not working, you can send your account deletion request directly via email to <strong>wittgrp@gmail.com</strong>, with subject line <strong>Account Deletion Request</strong> and the above details.</p>
+        <p class="info">Your account will be deleted within 30 days of your request.</p>
+    </div>
+
+    <div data-include="footer.html"></div>
+
+    <script src="include.js"></script>
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+
+            const subject = 'Account Deletion Request';
+            const body = `I, ${name}, with email ${email}, request account deletion.\n Reason: ${reason}.\n\nThanks,\n${name}`;
+
+            // Construct mailto URL
+            const mailtoLink = `mailto:wittgrp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
