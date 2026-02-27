@@ -120,7 +120,7 @@ body {
 
 .download-button:hover,
 .submit-button:hover {
-    background-color: #1230b0;
+    background-color: #000000;
 }
 
 /* Video Section Styles */
@@ -239,4 +239,5 @@ textarea {
         width: 90%;
     }
 }
+
 
