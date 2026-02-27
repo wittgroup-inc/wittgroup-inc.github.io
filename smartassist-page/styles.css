@@ -241,33 +241,26 @@ textarea {
 }
 
 
-/* ---- Privacy Policy Readability Fix ---- */
+/* ---- FIX LISTS + TEXT FOR LONG CONTENT ---- */
 
-.container h1 {
-    margin: 25px 0 10px;
-    font-size: 26px;
+section.container ul {
+    margin: 15px 0 15px 25px;
+    padding-left: 20px;
+    list-style: disc;
 }
 
-.container h2 {
-    margin: 20px 0 8px;
-    font-size: 20px;
+section.container li {
+    margin-bottom: 8px;
 }
 
-.container h3 {
-    margin: 15px 0 6px;
-    font-size: 18px;
+section.container p {
+    margin: 12px 0;
 }
 
-.container p {
-    margin: 10px 0;
-}
-
-.container ul {
-    margin: 10px 0 10px 20px;
-}
-
-.container li {
-    margin: 6px 0;
+section.container h1,
+section.container h2,
+section.container h3 {
+    margin: 20px 0 10px;
 }
 
 
