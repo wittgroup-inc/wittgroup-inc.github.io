@@ -241,27 +241,3 @@ textarea {
 }
 
 
-/* ---- FIX LISTS + TEXT FOR LONG CONTENT ---- */
-
-section.container ul {
-    margin: 15px 0 15px 25px;
-    padding-left: 20px;
-    list-style: disc;
-}
-
-section.container li {
-    margin-bottom: 8px;
-}
-
-section.container p {
-    margin: 12px 0;
-}
-
-section.container h1,
-section.container h2,
-section.container h3 {
-    margin: 20px 0 10px;
-}
-
-
-
