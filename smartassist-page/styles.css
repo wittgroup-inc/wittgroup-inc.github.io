@@ -241,4 +241,34 @@ textarea {
 }
 
 
+/* ---- Privacy Policy Readability Fix ---- */
+
+.container h1 {
+    margin: 25px 0 10px;
+    font-size: 26px;
+}
+
+.container h2 {
+    margin: 20px 0 8px;
+    font-size: 20px;
+}
+
+.container h3 {
+    margin: 15px 0 6px;
+    font-size: 18px;
+}
+
+.container p {
+    margin: 10px 0;
+}
+
+.container ul {
+    margin: 10px 0 10px 20px;
+}
+
+.container li {
+    margin: 6px 0;
+}
+
+
 
