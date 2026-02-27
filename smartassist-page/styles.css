@@ -241,28 +241,4 @@ textarea {
 }
 
 
-.translations-content-container h1,
-.translations-content-container h2,
-.translations-content-container h3 {
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
-
-.translations-content-container p {
-    margin-bottom: 12px;
-}
-
-.translations-content-container ul {
-    margin: 12px 0 12px 20px;
-}
-
-.translations-content-container li {
-    margin-bottom: 8px;
-}
-
-.header .title {
-    font-size: 28px;
-    font-weight: bold;
-}
-
 
