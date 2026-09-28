@@ -3,53 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivaly - Data Deletion Request</title>
+    <title>Shivaly - Delete your account</title>
+    <meta name="description" content="Request deletion of your Shivaly account and data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div data-include="header.html"></div>
 
-    <div class="form-container">
-        <div class="header header--form">
-            <h1>Request to Delete My Account</h1>
+    <main class="wrap page">
+        <p class="badge">Account and data</p>
+        <h1>Request to delete your account</h1>
+        <p class="lead">Fill in the form and we will delete your Shivaly account and the data linked to it. Your request opens in your email app so you can review it before sending.</p>
+
+        <div class="card">
+            <form id="deletionForm">
+                <label for="name">Full name *</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="reason">Reason for deletion *</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+
+                <button type="submit" class="submit-button">Submit request</button>
+            </form>
         </div>
-        
-        <form id="deletionForm">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required>
 
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="reason">Reason for Deletion *</label>
-            <textarea id="reason" name="reason" rows="4" required></textarea>
-
-            <button type="submit" class="submit-button">Submit Request</button>
-        </form>
-
-        <p class="info">If the submit button is not working, you can send your account deletion request directly via email to <strong>wittgrp@gmail.com</strong>, with subject line <strong>Account Deletion Request</strong> and the above details.</p>
+        <p class="info">If the submit button is not working, email <a href="mailto:wittgrp@gmail.com?subject=Account%20Deletion%20Request">wittgrp@gmail.com</a> with the subject line <strong>Account Deletion Request</strong> and the details above.</p>
         <p class="info">Your account will be deleted within 30 days of your request.</p>
-    </div>
+    </main>
 
     <div data-include="footer.html"></div>
 
     <script src="include.js"></script>
     <script>
-        document.getElementById('deletionForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+        document.getElementById('deletionForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const reason = document.getElementById('reason').value;
 
             const subject = 'Account Deletion Request';
-            const body = `I, ${name}, with email ${email}, request account deletion.\n Reason: ${reason}.\n\nThanks,\n${name}`;
+            const body = `I, ${name}, with email ${email}, request account deletion.\nReason: ${reason}\n\nThanks,\n${name}`;
 
-            // Construct mailto URL
-            const mailtoLink = `mailto:wittgrp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
+            window.location.href = `mailto:wittgrp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     </script>
 </body>
