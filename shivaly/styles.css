@@ -23,8 +23,8 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; color: var(--ink);
 
 /* Top bar */
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; font-size: 1.4rem; line-height: 1; letter-spacing: -0.01em; color: var(--ink); }
-.brand img { display: block; width: 40px; height: 40px; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 16px; text-decoration: none; font-weight: 700; font-size: 1.4rem; line-height: 1; letter-spacing: -0.01em; color: var(--ink); }
+.brand img { display: block; height: 28px; width: auto; flex-shrink: 0; }
 .topbar nav { display: flex; align-items: center; gap: 22px; }
 .topbar nav a { text-decoration: none; font-weight: 500; color: var(--text); }
 .topbar nav a:hover { color: var(--ink); text-decoration: underline; }
